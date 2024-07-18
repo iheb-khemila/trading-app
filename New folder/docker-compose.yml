@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  db:
+    build: ./db
+    container_name: investment_db
+    networks:
+      - investment-network
+    cap_add:
+      - SYS_NICE
+    restart: always
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      retries: 10
+      interval: 3s
+      timeout: 30s
+
+  api:
+    build: ./api
+    container_name: investment_api
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/swtp
+      - SPRING_DATASOURCE_USERNAME=root
+    networks:
+      - investment-network
+
+  ui:
+    image: "nginx:1.25.3-alpine-slim"
+    container_name: investment_ui
+    ports:
+      - "8081:80"
+    volumes:
+      - ./ui:/usr/share/nginx/html
+    networks:
+      - investment-network
+
+networks:
+  investment-network:
+    name: "investment-network"
+    driver: bridge

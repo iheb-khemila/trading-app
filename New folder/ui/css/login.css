@@ -1,0 +1,41 @@
+#login-title {
+    margin-top: 0
+}
+
+#login-container {
+    background-color: white;
+    margin: auto;
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+#username-container, #password-container, #userType, #last-name-container, #first-name-container, #company-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+#profile-details-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+#register-investor, #register-broker {
+
+    &.hide {
+        display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+}
+
+#username-error, #password-error {
+    margin-top: 4px;
+    font-size: 12px;
+}
+

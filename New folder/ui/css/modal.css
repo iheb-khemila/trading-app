@@ -1,0 +1,107 @@
+/* Base modal styles */
+.modal {
+    background-color: rgba( 119 , 119 , 119, .4) ;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+}
+
+/* Modal dialog */
+.modal-dialog {
+    position: relative;
+    margin: auto;
+    min-width: 575px;
+    pointer-events: none;
+}
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    transform: translate(0, -25%);
+}
+
+.modal.show .modal-dialog {
+    transform: translate(0, 0);
+}
+
+/* Modal content */
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+/* Modal header */
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+
+/* Modal title */
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Modal body */
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal footer */
+.modal-footer {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(0.3rem - 1px);
+    border-bottom-left-radius: calc(0.3rem - 1px);
+}
+
+/* Fade-in and fade-out transitions */
+.fade {
+    transition: opacity 0.15s linear;
+    opacity: 0;
+}
+
+.fade.show {
+    display: flex;
+    opacity: 1;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #007ea7;
+
+    &:hover {
+        background-color: #007ea7;
+        opacity: 0.3;
+        color: white
+    }
+}

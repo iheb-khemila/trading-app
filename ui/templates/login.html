@@ -1,0 +1,44 @@
+<!-- Container for the login form -->
+<div id="login-container">
+    <!-- Title for the login form -->
+    <h2 id="login-title">Login</h2>
+
+    <!-- Label for the username input field -->
+    <label id="username-label" for="username">Username</label>
+    <!-- Container for the username input and error message -->
+    <div id="username-container">
+        <!-- Input field for the username -->
+        <input id="username" placeholder="Username" />
+        <!-- Span element to display username-related error messages -->
+        <span id="username-error" class="error-message"></span>
+    </div>
+
+    <!-- Label for the password input field -->
+    <label id="password-label" for="password">Password</label>
+    <!-- Container for the password input and error message -->
+    <div id="password-container">
+        <!-- Input field for the password, with the type set to password to hide the characters -->
+        <input id="password" type="password" placeholder="Password" />
+        <!-- Span element to display password-related error messages -->
+        <span id="password-error" class="error-message"></span>
+    </div>
+
+    <!-- Label for the user type dropdown -->
+    <label id="userType-label" for="userType">User Type</label>
+    <!-- Dropdown for selecting the user type (Broker or Investor) -->
+    <select id="userType">
+        <!-- Option for selecting Broker as the user type -->
+        <option value="BROKER">Broker</option>
+        <!-- Option for selecting Investor as the user type -->
+        <option value="INVESTOR">Investor</option>
+    </select>
+
+    <!-- Link to the registration page -->
+    <a id="register-button" class="link">No Account? Register here</a>
+
+    <!-- Span element to display general user details error messages -->
+    <span id="user-details-error" class="error-message"></span>
+
+    <!-- Button to submit the login form -->
+    <button id="submit" class="mt-4">Login</button>
+</div>

@@ -1,0 +1,8 @@
+#username-label, #asset-name-label, #asset-type-label, #password-label, #userType-label, #first-name-label, #last-name-label, #company-label {
+    margin-bottom: 8px;
+}
+
+#asset-name-container {
+    display: flex;
+    flex-direction: column;
+}

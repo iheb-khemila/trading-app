@@ -1,0 +1,86 @@
+<!-- Container for the registration form -->
+<div id="login-container">
+    <!-- Title for the registration form -->
+    <h2 id="login-title">Register</h2>
+
+    <!-- Label for selecting the user type -->
+    <label id="userType-label" for="userType">User Type</label>
+    <!-- Dropdown for selecting the user type (Broker or Investor) -->
+    <select id="userType">
+        <!-- Option for selecting Broker as the user type -->
+        <option value="BROKER">Broker</option>
+        <!-- Option for selecting Investor as the user type -->
+        <option value="INVESTOR">Investor</option>
+    </select>
+
+    <!-- Subtitle for the profile details section -->
+    <h4 id="profile-details-title">Profile Details</h4>
+
+    <!-- Label for the username input field -->
+    <label id="username-label" for="username">Username</label>
+    <!-- Container for the username input field and its error message -->
+    <div id="username-container">
+        <!-- Input field for entering the username with a placeholder text "Username" -->
+        <input id="username" placeholder="Username..." />
+        <!-- Span element to display username-related error messages -->
+        <span id="username-error" class="error-message"></span>
+    </div>
+
+    <!-- Label for the password input field -->
+    <label id="password-label" for="password">Password</label>
+    <!-- Container for the password input field and its error message -->
+    <div id="password-container">
+        <!-- Input field for entering the password with a placeholder text "Password" and type set to "password" to hide characters -->
+        <input id="password" type="password" placeholder="Password..." />
+        <!-- Span element to display password-related error messages -->
+        <span id="password-error" class="error-message"></span>
+    </div>
+
+    <!-- Div container for registering as an Investor or Broker -->
+    <div>
+        <!-- Container for registering as an Investor -->
+        <div id="register-investor">
+            <!-- Label for entering the first name -->
+            <label id="first-name-label" for="first-name">First Name</label>
+            <!-- Container for entering the first name and its error message -->
+            <div id="first-name-container">
+                <!-- Input field for entering the first name with a placeholder text "First Name" -->
+                <input id="first-name" placeholder="First Name" />
+                <!-- Span element to display first name-related error messages -->
+                <span id="first-name-error" class="error-message"></span>
+            </div>
+
+            <!-- Label for entering the last name -->
+            <label id="last-name-label" for="last-name">Last Name</label>
+            <!-- Container for entering the last name and its error message -->
+            <div id="last-name-container">
+                <!-- Input field for entering the last name with a placeholder text "Last Name" -->
+                <input id="last-name" placeholder="Last Name" />
+                <!-- Span element to display last name-related error messages -->
+                <span id="last-name-error" class="error-message"></span>
+            </div>
+        </div>
+
+        <!-- Container for registering as a Broker -->
+        <div id="register-broker">
+            <!-- Label for entering the company name -->
+            <label id="company-label" for="company">Company Name</label>
+            <!-- Container for entering the company name and its error message -->
+            <div id="company-container">
+                <!-- Input field for entering the company name with a placeholder text "Company Name" -->
+                <input id="company" placeholder="Company Name" />
+                <!-- Span element to display company name-related error messages -->
+                <span id="company-error" class="error-message"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Span element to display general registration error messages -->
+    <span id="register-error" class="error-message"></span>
+
+    <!-- Link to redirect to the sign-in page for users who already have an account -->
+    <a id="sign-in-button" class="link">Already have an account? Sign in</a>
+
+    <!-- Button to submit the registration form -->
+    <button id="register-user-button" class="mt-4">Register</button>
+</div>

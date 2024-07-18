@@ -1,0 +1,157 @@
+<!-- Container for the entire page content -->
+<div class="page-container">
+    <!-- Main heading for the portfolios page -->
+    <h1>Portfolios</h1>
+
+    <!-- Container for displaying investor details -->
+    <div class="investor-details-container p-3 mb-5">
+        <!-- Individual container for investor name -->
+        <div class="investor-details-item pe-3">
+            <!-- Subheading for investor name -->
+            <h4 class="m-0 mb-2">Name</h4>
+            <!-- Element to display the investor's name -->
+            <div id="investor-name"></div>
+        </div>
+
+        <!-- Individual container for portfolio count -->
+        <div class="investor-details-item ps-3">
+            <!-- Subheading for portfolio count -->
+            <h4 class="m-0 mb-2">Portfolio Count</h4>
+            <!-- Element to display the number of portfolios -->
+            <div id="portfolio-count"></div>
+        </div>
+    </div>
+
+    <!-- Container for the table and the Create Portfolio button -->
+    <div class="table-container">
+        <!-- Button to create a new portfolio -->
+        <button id="create-portfolio-button" class="ms-auto">Create Portfolio</button>
+
+        <!-- Table to display the list of portfolios -->
+        <table id="portfolio-table" class="table table-bordered table-hover mt-4">
+            <!-- Table header -->
+            <thead>
+            <!-- Column for broker name -->
+            <th>Broker Name</th>
+            <!-- Column for creation date and time -->
+            <th>Created Date & Time</th>
+            <!-- Column for action buttons (e.g., view, edit, delete) -->
+            <th>Action</th>
+            </thead>
+            <!-- Table body where portfolio rows will be dynamically inserted -->
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Modal dialog for viewing portfolio assets, initially hidden -->
+    <div class="modal fade" id="view-asset-modal" tabindex="-1">
+        <!-- Modal dialog container -->
+        <div class="modal-dialog">
+            <!-- Modal content container -->
+            <div class="modal-content">
+                <!-- Modal header with the title -->
+                <div class="modal-header">
+                    <!-- Title of the modal -->
+                    <h3 class="modal-title" id="view-modal-title">Portfolio Assets</h3>
+                </div>
+                <!-- Modal body containing the asset table -->
+                <div class="modal-body">
+                    <!-- Table to display assets in the portfolio -->
+                    <table id="portfolio-asset-table" class="table table-bordered table-hover mt-4">
+                        <!-- Table header -->
+                        <thead>
+                        <!-- Column for asset name -->
+                        <th>Name</th>
+                        <!-- Column for asset kind/type -->
+                        <th>Kind</th>
+                        </thead>
+                        <!-- Table body where asset rows will be dynamically inserted -->
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <!-- Modal footer with a close button -->
+                <div class="modal-footer">
+                    <!-- Button to close the modal -->
+                    <button id="view-asset-modal-close" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal dialog for creating a new portfolio, initially hidden -->
+    <div class="modal fade" id="create-portfolio-modal" tabindex="-1">
+        <!-- Modal dialog container -->
+        <div class="modal-dialog">
+            <!-- Modal content container -->
+            <div class="modal-content">
+                <!-- Modal header with the title -->
+                <div class="modal-header">
+                    <!-- Title of the modal -->
+                    <h3 class="modal-title" id="create-portfolio-modal-title">Create Portfolio</h3>
+                </div>
+                <!-- Modal body containing the broker dropdown -->
+                <div class="modal-body">
+                    <!-- Label for the broker dropdown -->
+                    <label id="broker-label" for="broker">Broker</label>
+                    <!-- Dropdown for selecting a broker -->
+                    <select id="broker" class="w-100"></select>
+                </div>
+                <!-- Modal footer with action buttons -->
+                <div class="modal-footer">
+                    <!-- Button to close the modal -->
+                    <button id="create-portfolio-modal-close" class="btn-secondary me-2" type="button">Close</button>
+                    <!-- Button to save the new portfolio -->
+                    <button id="create-portfolio-modal-save" type="button">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal dialog for adding an asset to a portfolio, initially hidden -->
+    <div class="modal fade" id="add-asset-to-portfolio-modal" tabindex="-1">
+        <!-- Modal dialog container -->
+        <div class="modal-dialog">
+            <!-- Modal content container -->
+            <div class="modal-content">
+                <!-- Modal header with the title -->
+                <div class="modal-header">
+                    <!-- Title of the modal -->
+                    <h3 class="modal-title" id="add-asset-to-portfolio-title">Add Asset to Portfolio</h3>
+                </div>
+                <!-- Modal body containing the asset dropdown -->
+                <div class="modal-body">
+                    <!-- Label for the asset dropdown -->
+                    <label id="asset-label" for="asset">Asset</label>
+                    <!-- Dropdown for selecting an asset -->
+                    <select id="asset" class="w-100"></select>
+                </div>
+                <!-- Modal footer with action buttons -->
+                <div class="modal-footer">
+                    <!-- Button to close the modal -->
+                    <button id="add-asset-to-portfolio-modal-close" class="btn-secondary me-2" type="button">Close</button>
+                    <!-- Button to save the asset to the portfolio -->
+                    <button id="add-asset-to-portfolio-modal-save" type="button">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notification container, initially hidden -->
+    <div id="toast" class="toast-container hide">
+        <!-- Toast element for displaying error messages -->
+        <div class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true">
+            <!-- Icon for the toast notification -->
+            <div class="toast-icon"></div>
+            <!-- Container for the toast content -->
+            <div class="my-auto">
+                <!-- Header of the toast with title -->
+                <div class="toast-header mb-1">
+                    <!-- Title of the toast message -->
+                    <h3 class="m-0" id="toast-title">Error</h3>
+                </div>
+                <!-- Body of the toast where the error message will be displayed -->
+                <div class="toast-body" id="toast-body"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<!-- Container for the entire page content -->
+<div class="page-container">
+    <!-- Main heading for the broker dashboard -->
+    <h1>Broker Dashboard</h1>
+
+    <!-- Container for the table and the Add Asset button -->
+    <div class="table-container">
+        <!-- Button to add a new asset -->
+        <button id="add-asset-button" class="ms-auto">Add Asset</button>
+
+        <!-- Table to display the list of assets -->
+        <table id="asset-table" class="table table-bordered table-hover mt-4">
+            <!-- Table header -->
+            <thead>
+            <!-- Column for asset name -->
+            <th>Name</th>
+            <!-- Column for asset kind/type -->
+            <th>Kind</th>
+            <!-- Column for action buttons (e.g., edit, delete) -->
+            <th>Action</th>
+            </thead>
+            <!-- Table body where asset rows will be dynamically inserted -->
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Toast notification container, initially hidden -->
+    <div id="toast" class="toast-container hide">
+        <!-- Toast element for displaying error messages -->
+        <div class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true">
+            <!-- Icon for the toast notification -->
+            <div class="toast-icon"></div>
+            <!-- Container for the toast content -->
+            <div class="my-auto">
+                <!-- Header of the toast with title -->
+                <div class="toast-header mb-1">
+                    <!-- Title of the toast message -->
+                    <h3 class="m-0" id="toast-title">Error</h3>
+                </div>
+                <!-- Body of the toast where the error message will be displayed -->
+                <div class="toast-body" id="toast-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal dialog for adding a new asset, initially hidden -->
+    <div class="modal fade" id="add-asset-modal" tabindex="-1">
+        <!-- Modal dialog container -->
+        <div class="modal-dialog">
+            <!-- Modal content container -->
+            <div class="modal-content">
+                <!-- Modal header with the title -->
+                <div class="modal-header">
+                    <!-- Title of the modal -->
+                    <h3 class="modal-title" id="add-asset-modal-title">Add Asset</h3>
+                </div>
+                <!-- Modal body containing the form fields -->
+                <div class="modal-body">
+                    <!-- Label for the asset name input field -->
+                    <label id="asset-name-label" for="asset-name">Name</label>
+                    <!-- Container for the asset name input and error message -->
+                    <div id="asset-name-container" class="mb-3">
+                        <!-- Input field for the asset name -->
+                        <input id="asset-name" placeholder="Name" />
+                        <!-- Error message span for the asset name input -->
+                        <span id="asset-name-error" class="error-message"></span>
+                    </div>
+
+                    <!-- Label for the asset type dropdown -->
+                    <label id="asset-type-label" for="asset-type">User Type</label>
+                    <!-- Dropdown for selecting the type of asset -->
+                    <select id="asset-type" class="w-100">
+                        <!-- Option for selecting 'Share' as the asset type -->
+                        <option value="SHARE">Share</option>
+                        <!-- Option for selecting 'Bond' as the asset type -->
+                        <option value="BOND">Bond</option>
+                    </select>
+
+                    <!-- Error message span for the asset dropdown -->
+                    <span id="asset-error" class="error-message"></span>
+                </div>
+                <!-- Modal footer with action buttons -->
+                <div class="modal-footer">
+                    <!-- Button to close the modal -->
+                    <button id="modal-close" type="button" class="btn btn-secondary me-2">Close</button>
+                    <!-- Button to save the new asset -->
+                    <button id="modal-save" type="button" class="ms-2">Save Asset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
